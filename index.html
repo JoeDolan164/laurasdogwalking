@@ -84,23 +84,29 @@
         
         /* Hero Section */
         .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1200/600');
+            background-image: url('https://cdn.pixabay.com/photo/2021/01/21/16/17/english-cocker-spaniel-5937757_1280.jpg');
             background-size: cover;
             background-position: center;
             color: white;
             padding: 100px 0;
             text-align: center;
+            position: relative;
         }
         
-        .hero h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1;
         }
         
-        .hero p {
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto 30px;
+        .hero .container {
+            position: relative;
+            z-index: 2;
         }
         
         .btn {
@@ -172,6 +178,134 @@
         
         .service-card p {
             color: #666;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .pricing-table {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .pricing-column {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .pricing-column:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+        
+        .pricing-header {
+            background-color: #3498db;
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        
+        .pricing-header h3 {
+            margin: 0;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+        
+        .pricing-body {
+            padding: 30px 25px;
+        }
+        
+        .price-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 5px;
+        }
+        
+        .price-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .service {
+            font-weight: bold;
+            color: #333;
+            font-size: 18px;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .price {
+            color: #3498db;
+            font-size: 28px;
+            font-weight: bold;
+            display: block;
+            margin: 10px 0;
+        }
+        
+        .description {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.5;
+            margin: 8px 0 0;
+        }
+        
+        .pricing-notes {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 20px auto 0;
+            text-align: center;
+        }
+        
+        .pricing-notes h4 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 22px;
+        }
+        
+        .pricing-notes ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 35px;
+            display: inline-block;
+            text-align: left;
+        }
+        
+        .pricing-notes li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .pricing-notes li:before {
+            content: "✓";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .pricing-notes .btn {
+            margin-top: 15px;
+            padding: 14px 30px;
+            font-size: 17px;
         }
         
         /* About Section */
@@ -460,12 +594,100 @@
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Pricing</h2>
+                <p>Transparent and competitive rates for all our pet care services</p>
+            </div>
+            <div class="pricing-table">
+                <div class="pricing-column">
+                    <div class="pricing-header">
+                        <h3>Dog Walking</h3>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price-item">
+                            <span class="service">30-Minute Walk</span>
+                            <span class="price">£12</span>
+                            <p class="description">Perfect for puppies or older dogs who need a quick break</p>
+                        </div>
+                        <div class="price-item">
+                            <span class="service">60-Minute Walk</span>
+                            <span class="price">£18</span>
+                            <p class="description">Ideal for most dogs to get proper exercise and stimulation</p>
+                        </div>
+                        <div class="price-item">
+                            <span class="service">Group Walk (60 min)</span>
+                            <span class="price">£15</span>
+                            <p class="description">For sociable dogs who enjoy company (max 4 dogs)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="pricing-header">
+                        <h3>Pet Sitting</h3>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price-item">
+                            <span class="service">30-Minute Visit</span>
+                            <span class="price">£14</span>
+                            <p class="description">Feeding, fresh water, and brief playtime</p>
+                        </div>
+                        <div class="price-item">
+                            <span class="service">60-Minute Visit</span>
+                            <span class="price">£20</span>
+                            <p class="description">Extended care including play, cuddles, and home check</p>
+                        </div>
+                        <div class="price-item">
+                            <span class="service">Overnight Stay</span>
+                            <span class="price">£50</span>
+                            <p class="description">12-hour overnight care in your home</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing-column">
+                    <div class="pricing-header">
+                        <h3>Specialty Services</h3>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price-item">
+                            <span class="service">Puppy Package</span>
+                            <span class="price">£15</span>
+                            <p class="description">30-minute visits with training reinforcement, perfect for puppies</p>
+                        </div>
+                        <div class="price-item">
+                            <span class="service">Medication Administration</span>
+                            <span class="price">+£3</span>
+                            <p class="description">Added to any service, includes administering medication</p>
+                        </div>
+                        <div class="price-item">
+                            <span class="service">Holiday Package</span>
+                            <span class="price">Custom</span>
+                            <p class="description">Custom care plan while you're on holiday - contact for quote</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-notes">
+                <h4>Additional Notes:</h4>
+                <ul>
+                    <li>10% discount for additional pets in the same household</li>
+                    <li>Weekend and holiday services available at 15% additional charge</li>
+                    <li>All services include free updates and photos</li>
+                    <li>Long-term bookings (4+ weeks) eligible for 10% discount</li>
+                </ul>
+                <a href="#contact" class="btn">Contact for Custom Quote</a>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
-                    <img src="/api/placeholder/600/400" alt="Dog walker with happy dogs">
+                    <img src="https://cdn.pixabay.com/photo/2019/11/07/08/40/puppy-4608266_1280.jpg" alt="Dog walker with happy dogs">
                 </div>
                 <div class="about-text">
                     <h2>About Us</h2>

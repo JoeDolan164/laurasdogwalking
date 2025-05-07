@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paws & Paths Dog Walking Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #aa4ac5;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 28px;
+            margin-left: 10px;
+        }
+        
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #f1c40f;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #f1c40f;
+            color: #333;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e2b607;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 32px;
+            color: #db34c2;
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .service-card p {
+            color: #666;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: #eef7fd;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            display: block;
+        }
+        
+        .about-text h2 {
+            font-size: 32px;
+            color: #520260;
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 15px;
+        }
+        
+        .author-name {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .author-dog {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: #eef7fd;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .contact-info {
+            background-color: #8d1c9c;
+            color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #520260;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #f1c40f;
+        }
+        
+        .footer-nav {
+            margin-bottom: 20px;
+        }
+        
+        .footer-nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-nav a:hover {
+            color: #f1c40f;
+        }
+        
+        .copyright {
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            .hero h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-image">🐾</div>
+                <h1>Paws & Paths</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Professional Dog Walking & Pet Care</h2>
+            <p>Keeping your pets happy, healthy, and exercised while you're away</p>
+            <a href="#contact" class="btn">Book a Walk Today</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>We offer a range of flexible and reliable services to meet your pet's needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🐕</div>
+                    <h3>Dog Walking</h3>
+                    <p>Individual or group walks tailored to your dog's energy level and personality.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Pet Sitting</h3>
+                    <p>In-home care for your pets while you're away, including feeding, playtime, and lots of love.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🥎</div>
+                    <h3>Puppy Play Sessions</h3>
+                    <p>Special attention for puppies including bathroom breaks, play, and basic training.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="/api/placeholder/600/400" alt="Dog walker with happy dogs">
+                </div>
+                <div class="about-text">
+                    <h2>About Us</h2>
+                    <p>Paws & Paths was founded on a simple principle: pets deserve the best care possible. As lifelong animal lovers, we understand the special bond between you and your pet.</p>
+                    <p>Our team is fully insured, trained in pet first aid, and dedicated to providing personalized care for every pet we work with. We treat your furry family members as if they were our own.</p>
+                    <p>We serve neighborhoods throughout the local area, providing reliable and loving care for dogs of all sizes, ages, and energy levels.</p>
+                    <a href="#contact" class="btn">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Happy Clients</h2>
+                <p>Don't just take our word for it - hear what our clients have to say</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Paws & Paths has been a lifesaver for me and my energetic Border Collie, Max. They're reliable, caring, and Max always comes home happy and tired."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image"></div>
+                        <div>
+                            <p class="author-name">Sarah Johnson</p>
+                            <p class="author-dog">Owner of Max</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I was hesitant to leave my anxious rescue dog with someone new, but the team at Paws & Paths was patient and understanding. Now Bella looks forward to her walks!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-image"></div>
+                        <div>
+                            <p class="author-name">Mark Thompson</p>
+                            <p class="author-dog">Owner of Bella</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The pet sitting service is fantastic. I can go on holiday knowing my cats are in good hands. The daily updates and photos are a lovely touch."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image"></div>
+                        <div>
+                            <p class="author-name">Emma Wilson</p>
+                            <p class="author-dog">Owner of Whiskers & Luna</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Professional, punctual, and passionate about pets. My dog Buddy is always excited when they arrive. Best dog walking service in the area!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-image"></div>
+                        <div>
+                            <p class="author-name">James Miller</p>
+                            <p class="author-dog">Owner of Buddy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p>Have questions or ready to book? Contact us today!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Needed</label>
+                            <select id="service" class="form-control">
+                                <option value="">Select a Service</option>
+                                <option value="dog-walking">Dog Walking</option>
+                                <option value="pet-sitting">Pet Sitting</option>
+                                <option value="puppy-care">Puppy Care</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i>📞</i> Phone: 07123 456789</p>
+                    <p><i>✉️</i> Email: info@pawsandpaths.com</p>
+                    <p><i>📍</i> Area: Serving all neighborhoods in [Your City] and surrounding areas</p>
+                    <p><i>🕒</i> Hours: Monday to Friday: 10am - 7pm<br>
+                    Weekends: 10am - 5pm</p>
+                    <h3 style="margin-top: 30px;">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="logo" style="margin-bottom: 20px;">
+                <div class="logo-image">🐾</div>
+                <h1>Paws & Paths</h1>
+            </div>
+            <div class="footer-nav">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="copyright">© 2025 Paws & Paths Dog Walking Services. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
